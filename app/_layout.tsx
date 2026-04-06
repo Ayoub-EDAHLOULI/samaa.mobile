@@ -1,8 +1,9 @@
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 
-// Inject the multi-language engine before anything renders!
+// Inject our global configurations
 import "../src/i18n";
+import "../src/global.css";
 
 export default function RootLayout() {
   return (
