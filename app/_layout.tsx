@@ -6,7 +6,8 @@ export default function RootLayout() {
     <>
       <StatusBar style="light" />
       <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="index" />
+        {/* Point the root router directly to the tabs group */}
+        <Stack.Screen name="(tabs)" />
       </Stack>
     </>
   );
