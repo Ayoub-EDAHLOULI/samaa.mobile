@@ -1,24 +1,27 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { useTranslation } from "react-i18next";
 
 export default function TabLayout() {
+  const { t } = useTranslation();
+
   return (
     <Tabs
       screenOptions={{
-        headerShown: false, // Hides the default top header
+        headerShown: false,
         tabBarStyle: {
-          backgroundColor: "#0F172A", // Matches our dark theme
-          borderTopWidth: 0, // Removes the ugly top border
-          elevation: 0, // Removes shadow on Android
+          backgroundColor: "#0F172A",
+          borderTopWidth: 0,
+          elevation: 0,
         },
-        tabBarActiveTintColor: "#38BDF8", // Samaa Blue for active tab
-        tabBarInactiveTintColor: "#64748B", // Slate gray for inactive tabs
+        tabBarActiveTintColor: "#38BDF8",
+        tabBarInactiveTintColor: "#64748B",
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Listen",
+          title: t("tabs.listen"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="mic-circle" size={32} color={color} />
           ),
@@ -27,7 +30,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="library"
         options={{
-          title: "Library",
+          title: t("tabs.library"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="library" size={24} color={color} />
           ),
@@ -36,7 +39,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="settings"
         options={{
-          title: "Settings",
+          title: t("tabs.settings"),
           tabBarIcon: ({ color }) => (
             <Ionicons name="settings" size={24} color={color} />
           ),
