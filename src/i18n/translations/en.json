@@ -1,0 +1,16 @@
+{
+  "tabs": {
+    "listen": "Listen",
+    "library": "Library",
+    "settings": "Settings"
+  },
+  "home": {
+    "title": "Samaa",
+    "subtitle": "Tap to discover the Reciter",
+    "ready": "Ready",
+    "listening": "Listening...",
+    "analyzing": "AI is analyzing...",
+    "match_found": "Match Found!",
+    "confidence": "Confidence"
+  }
+}

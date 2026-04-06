@@ -1,0 +1,16 @@
+{
+  "tabs": {
+    "listen": "Écouter",
+    "library": "Bibliothèque",
+    "settings": "Paramètres"
+  },
+  "home": {
+    "title": "Samaa",
+    "subtitle": "Appuyez pour découvrir le Récitateur",
+    "ready": "Prêt",
+    "listening": "Écoute en cours...",
+    "analyzing": "L'IA analyse...",
+    "match_found": "Correspondance trouvée !",
+    "confidence": "Confiance"
+  }
+}
