@@ -1,50 +1,35 @@
-# Welcome to your Expo app 👋
+# 📱 Samaa Mobile App (سماع)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+The official mobile client for **Samaa**, an AI-powered "Shazam for the Quran." This application allows users to record audio of a Quranic recitation, send it to our machine learning microservice, and instantly discover the identity of the Qari (reciter). 
 
-## Get started
+This repository is part of the broader Samaa ecosystem and acts as the primary user interface, connecting seamlessly to the [Samaa Backend](https://github.com/Ayoub-EDAHLOULI/samaa.backend) and the [Samaa AI Engine](https://github.com/Ayoub-EDAHLOULI/samaa.ai).
 
-1. Install dependencies
+## 🚀 Tech Stack
 
-   ```bash
-   npm install
-   ```
+* **Framework:** React Native & Expo
+* **Language:** TypeScript
+* **Audio Processing:** `expo-av`
+* **Secure Storage:** `expo-secure-store`
+* **Networking:** Axios
+* **Navigation:** React Navigation
 
-2. Start the app
+## ✨ Key Features
 
-   ```bash
-   npx expo start
-   ```
+1. **One-Tap Recognition:** High-fidelity audio recording optimized for acoustic feature extraction.
+2. **Discovery History:** View past recognized Qaris, seamlessly synced with the PostgreSQL backend.
+3. **Favorites Library:** Save your favorite reciters for easy access to their Spotify/YouTube profiles.
+4. **Guest Mode:** Frictionless onboarding allowing users to identify audio without creating an account first.
 
-In the output, you'll find options to open the app in a
+## 💻 Local Development Setup
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 1. Prerequisites
+* [Node.js](https://nodejs.org/) (v18 or higher)
+* [Expo Go](https://expo.dev/client) app installed on your iOS or Android device
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+### 2. Clone and Install
 ```bash
-npm run reset-project
-```
+git clone [https://github.com/Ayoub-EDAHLOULI/samaa.mobile.git](https://github.com/Ayoub-EDAHLOULI/samaa.mobile.git)
+cd samaa.mobile
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# Install all dependencies
+npm install
