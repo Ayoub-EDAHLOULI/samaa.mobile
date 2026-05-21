@@ -3,7 +3,7 @@ import axios from "axios";
 // Pull the API URL directly from the .env file.
 // We provide a fallback just in case the .env fails to load.
 const BASE_URL =
-  process.env.EXPO_PUBLIC_API_URL || "http://192.168.100.124:5000/api/v1";
+  process.env.EXPO_PUBLIC_API_URL || "http://192.168.11.230:5000/api/v1";
 
 export const apiClient = axios.create({
   baseURL: BASE_URL,

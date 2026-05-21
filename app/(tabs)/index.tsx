@@ -353,11 +353,41 @@ export default function HomeScreen() {
         allowsRecordingIOS: true,
         playsInSilentModeIOS: true,
       });
-      const { recording } = await Audio.Recording.createAsync(
-        Audio.RecordingOptionsPresets.HIGH_QUALITY,
-      );
+
+      // Define strict recording options optimized for backend AI analysis
+      // This forces a high sample rate and a format that is easy to extract features from
+      const recordingOptions: Audio.RecordingOptions = {
+        isMeteringEnabled: true,
+        android: {
+          extension: ".m4a",
+          outputFormat: Audio.AndroidOutputFormat.MPEG_4,
+          audioEncoder: Audio.AndroidAudioEncoder.AAC,
+          sampleRate: 44100, // Crucial for MFCC extraction
+          numberOfChannels: 1, // Mono is usually better for voice recognition
+          bitRate: 128000,
+        },
+        ios: {
+          extension: ".m4a",
+          outputFormat: Audio.IOSOutputFormat.MPEG4AAC,
+          audioQuality: Audio.IOSAudioQuality.MAX,
+          sampleRate: 44100, // Crucial for MFCC extraction
+          numberOfChannels: 1, // Mono is usually better for voice recognition
+          bitRate: 128000,
+          linearPCMBitDepth: 16,
+          linearPCMIsBigEndian: false,
+          linearPCMIsFloat: false,
+        },
+        web: {
+          mimeType: "audio/webm",
+          bitsPerSecond: 128000,
+        },
+      };
+
+      const { recording } = await Audio.Recording.createAsync(recordingOptions);
       setRecording(recording);
-      setTimeout(() => stopAndAnalyze(recording), 5000);
+
+      // Auto-stop after 8 seconds — longer clip = more stable MFCC/Mel statistics
+      setTimeout(() => stopAndAnalyze(recording), 8000);
     } catch (err) {
       console.error("Failed to start recording", err);
     }
